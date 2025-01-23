@@ -1,14 +1,10 @@
-collections:
-  authors:
-    output: true
+baseurl: "/akselmb"
+url: https://akselmb.github.io/
 defaults:
   - scope:
       path: ""
     values:
       layout: "default"
-sass:
-  sass_dir: _sass
-  style: compressed
 plugins:
   - jekyll-feed
   - jekyll-sitemap

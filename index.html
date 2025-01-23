@@ -1,8 +1,30 @@
 ---
 title: Home
+layout: default
 ---
-<h1>
-    {{ 'Hello World!' | downcase }}
-</h1>
-<h2>Hello
-</h2>
+<main class="hero-section">
+  <h1 class="hero-heading">
+    Hello.<br>
+    I'm a multi-disciplinary designer with a passion for low-code and data analytics.
+  </h1>
+
+  {% comment %} <div
+        class="decorative-square"
+        role="presentation"
+      aria-hidden="true"></div> {% endcomment %}
+
+  <section class="contact-section">
+    <span>Get in touch:</span>
+    <a
+      href="mailto:akselmorris@gmail.com"
+      class="contact-link"
+      aria-label="Send email to akselmorris@gmail.com">Email</a>
+    <span aria-hidden="true">|</span>
+    <a
+      href="https://linkedin.com/in/akselmb"
+      class="contact-link"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit LinkedIn profile (opens in new tab)">LinkedIn</a>
+  </section>
+</main>

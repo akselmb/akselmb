@@ -1,0 +1,167 @@
+---
+---
+@import 'normalize.css';
+
+// Variables
+$color-text-primary: rgba(68, 58, 76, 1);
+$color-background-main: rgba(230, 230, 230, 1);
+$color-decorative-square: rgba(217, 217, 217, 1);
+$spacing-large: 80px;
+$spacing-medium: 48px;
+$spacing-small: 40px;
+$font-size-large: 64px;
+$font-size-medium: 24px;
+$font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-main;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Hero Section
+.hero-section {
+  background-color: $color-background-main;
+  min-height: 100vh;
+  width: 100%;
+  padding: $spacing-medium 160px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 991px) {
+    padding: 20px;
+  }
+
+  .hero-heading {
+    color: $color-text-primary;
+    font-size: $font-size-large;
+    font-weight: 500;
+    margin-top: $spacing-large;
+    max-width: 900px;
+
+    @media (max-width: 991px) {
+      font-size: 40px;
+      margin-top: $spacing-small;
+    }
+  }
+
+  .decorative-square {
+    width: 207px;
+    height: 207px;
+    background-color: $color-decorative-square;
+    margin-top: $spacing-large;
+
+    @media (max-width: 991px) {
+      margin-top: $spacing-small;
+    }
+  }
+
+  .contact-section {
+    margin-top: $spacing-large;
+    color: $color-text-primary;
+    font-size: $font-size-medium;
+    font-weight: 500;
+
+    .contact-link {
+      color: inherit;
+      text-decoration: underline;
+      margin: 0 8px;
+
+      &:focus {
+        outline: 2px solid $color-text-primary;
+        outline-offset: 4px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      margin-top: $spacing-small;
+    }
+  }
+}
+
+// Navigation
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: $color-background-main;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .brand-logo {
+    color: $color-text-primary;
+    font-size: $font-size-medium;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+
+    &:focus {
+      outline: 2px solid $color-text-primary;
+      outline-offset: 4px;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 34px;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .nav-link {
+      color: $color-text-primary;
+      text-decoration: none;
+      font-size: $font-size-medium;
+      position: relative;
+
+      &:hover::after,
+      &:focus::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: $color-text-primary;
+      }
+
+      &:focus {
+        outline: 2px solid $color-text-primary;
+        outline-offset: 4px;
+      }
+    }
+  }
+}
+
+// Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
