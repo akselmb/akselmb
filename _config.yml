@@ -1,4 +1,4 @@
-baseurl: "/akselmb"
+baseurl: "/"
 url: https://akselmb.github.io/
 defaults:
   - scope:
