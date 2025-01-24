@@ -3,8 +3,8 @@
 @import 'normalize.css';
 
 // Variables
-$color-text-primary: rgba(68, 58, 76, 1);
-$color-background-main: rgba(230, 230, 230, 1);
+$color-text-primary: #DBDBDB;
+$color-background-main: #252525;
 $color-decorative-square: rgba(217, 217, 217, 1);
 $spacing-large: 80px;
 $spacing-medium: 48px;
@@ -24,6 +24,7 @@ body {
   font-family: $font-main;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow: hidden;
 }
 
 .visually-hidden {
@@ -42,36 +43,59 @@ body {
 .hero-section {
   background-color: $color-background-main;
   min-height: 100vh;
-  width: 100%;
-  padding: $spacing-medium 160px;
+  width: auto;
+  padding: $spacing-medium 160px 0px;
   display: flex;
   flex-direction: column;
+  gap: 80px;
 
   @media (max-width: 991px) {
-    padding: 20px;
+    padding: 24px;
   }
 
-  .hero-heading {
-    color: $color-text-primary;
-    font-size: $font-size-large;
-    font-weight: 500;
-    margin-top: $spacing-large;
-    max-width: 900px;
+  .hero-content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
 
-    @media (max-width: 991px) {
-      font-size: 40px;
-      margin-top: $spacing-small;
+    .hero-text{
+      color: $color-text-primary;
+      max-width: 38em;
+      margin-top: $spacing-large;
+      margin: 0;
+
+      .hero-heading {       
+        font-size: $font-size-large;
+        font-weight: 500; 
+        margin: 0px;      
+
+        @media (max-width: 991px) {
+          font-size: 40px;
+          margin: 0px;
+        }
+      }
+
+      .hero-undertitle {
+        font-weight: 300;
+        font-size: 40px;
+
+        .specific-words {
+          font-weight: 500;
+        }
+
+        .dot {
+          color: #13EA9B;
+        }
+
+        @media (max-width: 991px) {
+          font-size: 28px;
+        }
+      }
     }
-  }
-
-  .decorative-square {
-    width: 207px;
-    height: 207px;
-    background-color: $color-decorative-square;
-    margin-top: $spacing-large;
-
-    @media (max-width: 991px) {
-      margin-top: $spacing-small;
+    
+    .profile-image{
+      height: 100%;
+      width: 25%;
     }
   }
 
@@ -79,12 +103,18 @@ body {
     margin-top: $spacing-large;
     color: $color-text-primary;
     font-size: $font-size-medium;
-    font-weight: 500;
+    font-weight: 400;
 
     .contact-link {
       color: inherit;
       text-decoration: underline;
       margin: 0 8px;
+
+      &:hover,
+      &:focus {
+        color: #13EA9B;
+        font-weight: 600;
+      }
 
       &:focus {
         outline: 2px solid $color-text-primary;
@@ -117,6 +147,12 @@ body {
     font-weight: 500;
     text-decoration: none;
     position: relative;
+
+    &:hover,
+    &:focus {
+      color: #13EA9B;
+      font-weight: 700;
+    }
 
     &:focus {
       outline: 2px solid $color-text-primary;
